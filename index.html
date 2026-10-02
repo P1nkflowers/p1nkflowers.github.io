@@ -35,7 +35,7 @@
 
         :root {
             --beat-glow: 0px;
-            --beat-color-pulse: #0d0d11;
+            --beat-color-pulse: #ffb6c1;
         }
 
         body {
@@ -459,8 +459,8 @@
 
             let normalized = bassValue / 255;
             let glowIntensity = normalized * 50; 
-            let redShift = Math.floor(13 + (lightningOpacity * 35)); 
-            let colorPulse = `rgb(${redShift}, 13, 17)`;
+            let pinkTone = Math.floor(190 + (lightningOpacity * 35)); 
+            let colorPulse = `rgb(${pinkTone}, ${120 + Math.floor(lightningOpacity * 25)}, ${160 + Math.floor(lightningOpacity * 30)})`;
 
             document.documentElement.style.setProperty('--beat-glow', `${glowIntensity}px`);
             document.documentElement.style.setProperty('--beat-color-pulse', colorPulse);
