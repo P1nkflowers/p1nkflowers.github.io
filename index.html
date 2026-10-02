@@ -60,7 +60,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: ##0d0d11;
+            background-color: #0d0d11;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -167,80 +167,6 @@
             color: #b0b0bc;
             line-height: 1.4;
         }
-
-        /* Subscription Required Block Module */
-        .sub-locker {
-            background: linear-gradient(135deg, #121218 0%, #171724 100%);
-            border: 2px solid #ffc0cb;
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 0 35px #ffc0cbd0;
-            max-width: 440px;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 40px;
-            display: none;
-        }
-
-        .sub-locker h3 {
-            color: #ffffff;
-            margin-top: 0;
-            font-size: 1.6rem;
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px #ffc0cbd0;
-        }
-
-        .sub-locker p {
-            color: #b0b0bc;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
-
-        .locker-btn {
-            background: #ffc0cb;
-            color: #ffffff;
-            border: none;
-            padding: 14px 20px;
-            font-weight: bold;
-            font-size: 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            transition: all 0.2s ease;
-            margin-bottom: 15px;
-            width: 100%;
-            box-sizing: border-box;
-            box-shadow: 0 4px 15px #ffc0cbd0;
-        }
-
-        .locker-btn:hover {
-            background: #ffc0cb;
-            transform: translateY(-1px);
-        }
-
-        .locker-btn.verify-btn {
-            background: #20202c;
-            border: 1px solid #3d3d5c;
-            color: #e0e0eb;
-            box-shadow: none;
-        }
-
-        .locker-btn.verify-btn:hover {
-            background: #272736;
-            border-color: #ffc0cb;
-        }
-
-        .error-msg {
-            color: #ffc0cb;
-            font-size: 0.85rem;
-            margin-top: -5px;
-            margin-bottom: 15px;
-            display: none;
-            font-weight: 500;
-        }
     </style>
 </head>
 <body>
@@ -257,14 +183,6 @@
 
         <div class="title-container">
             <div class="typewriter-text" id="typewriter"></div>
-        </div>
-
-        <div class="sub-locker" id="subscription-modal">
-            <h3>ATTENTION</h3>
-            <p>Please Subscribe to my channel before continuing to my site.</p>
-            <a href="https://youtube.com/@virtualstripes?sub_confirmation=1" target="_blank" class="locker-btn" id="subscribe-action-btn">1. Subscribe on YouTube</a>
-            <div class="error-msg" id="locker-error">Please complete step 1 before checking status!</div>
-            <button class="locker-btn verify-btn" id="verify-action-btn">2. Check Verification</button>
         </div>
 
         <div class="links-container" id="menu-links">
@@ -520,41 +438,6 @@
             document.documentElement.style.setProperty('--beat-color-pulse', colorPulse);
         }
 
-        let clickedSubscribe = false;
-
-        function checkLayoutLock() {
-            const container = document.getElementById('menu-links');
-            const modal = document.getElementById('subscription-modal');
-            const subBtn = document.getElementById('subscribe-action-btn');
-            const verifyBtn = document.getElementById('verify-action-btn');
-            const errorMsg = document.getElementById('locker-error');
-
-            const hasVisitedBefore = localStorage.getItem('stripes_visited');
-
-            if (!hasVisitedBefore) {
-                container.style.display = 'none';
-                modal.style.display = 'block';
-
-                subBtn.addEventListener('click', () => {
-                    clickedSubscribe = true;
-                    errorMsg.style.display = 'none';
-                });
-
-                verifyBtn.addEventListener('click', () => {
-                    if (!clickedSubscribe) {
-                        errorMsg.style.display = 'block';
-                    } else {
-                        localStorage.setItem('stripes_visited', 'true');
-                        modal.style.display = 'none';
-                        container.style.display = 'flex';
-                    }
-                });
-            } else {
-                modal.style.display = 'none';
-                container.style.display = 'flex';
-            }
-        }
-
         const overlay = document.getElementById('overlay-screen');
         const siteContent = document.getElementById('site-content');
         const enterStatus = document.getElementById('enter-status');
@@ -565,7 +448,6 @@
             siteContent.classList.add('active');
 
             setupAndPlayAudio();
-            checkLayoutLock();
         });
 
         document.addEventListener("DOMContentLoaded", function() {
