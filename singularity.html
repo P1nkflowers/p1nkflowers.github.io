@@ -20,7 +20,6 @@
             box-sizing: border-box;
             position: relative;
         }
-        /* --- GLOWING TYPEWRITER EFFECT --- */
         .title-container {
             height: 60px;
             display: flex;
@@ -32,10 +31,10 @@
             font-size: 2.5rem;
             font-weight: bold;
             color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 51, 51, 0.8), 
-                         0 0 20px rgba(255, 51, 51, 0.6);
+            text-shadow: 0 0 10px rgba(255, 192, 203, 0.8), 
+                         0 0 20px rgba(255, 192, 203, 0.6);
             letter-spacing: 2px;
-            border-right: 3px solid #ff3333;
+            border-right: 3px solid #ffc0cb;
             white-space: nowrap;
             background: transparent;
             padding-right: 4px;
@@ -43,7 +42,7 @@
         }
         @keyframes blink {
             from, to { border-color: transparent }
-            50% { border-color: #ff3333; }
+            50% { border-color: #ffc0cb; }
         }
         /* --- CONTAINERS --- */
         .links-container {
@@ -68,8 +67,8 @@
             transition: all 0.3s ease;
         }
         .mod-card:hover {
-            border-color: #ff3333;
-            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.2);
+            border-color: #ffc0cb;
+            box-shadow: 0 6px 20px rgba(255, 192, 203, 0.2);
             transform: translateY(-2px);
         }
         /* --- TOP SECTION (Title, Description, and Download Button) --- */
@@ -86,7 +85,7 @@
         .btn-name {
             font-size: 1.25rem;
             font-weight: bold;
-            color: #ff4d4d;
+            color: #ffb6c1;
             margin-bottom: 4px;
         }
         .btn-description {
@@ -110,11 +109,11 @@
             box-sizing: border-box;
             text-decoration: none;
             flex-shrink: 0;
-            color: #ffffff; /* Forces the SVG stroke to inherit pure white */
+            color: #ffffff;
         }
         .download-btn:hover {
-            background: #ff3333;
-            border-color: #ff4d4d;
+            background: #ffc0cb;
+            border-color: #ffb6c1;
         }
         .download-icon {
             width: 20px;
@@ -122,7 +121,6 @@
             object-fit: contain;
             pointer-events: none;
         }
-        /* --- CODE CARD / ROW STYLES --- */
         .code-row {
             display: flex;
             align-items: center;
@@ -137,7 +135,7 @@
             font-family: 'Consolas', 'Courier New', Courier, monospace;
             font-size: 0.9rem;
             font-weight: bold;
-            color: #ff4d4d;
+            color: #ffb6c1;
             word-break: break-all;
         }
         .copy-btn {
@@ -156,8 +154,8 @@
             flex-shrink: 0;
         }
         .copy-btn:hover {
-            background: #ff3333;
-            border-color: #ff4d4d;
+            background: #ffc0cb;
+            border-color: #ffb6c1;
         }
         .copy-icon {
             width: 20px;
@@ -170,7 +168,6 @@
         .copy-btn:hover .copy-icon {
             filter: invert(0); 
         }
-        /* --- HOME BUTTON STYLE --- */
         .home-btn {
             background: #16161f;
             border: 1px solid #33334d;
@@ -187,9 +184,9 @@
             margin-top: auto;
         }
         .home-btn:hover {
-            border-color: #ff3333;
+            border-color: #ffc0cb;
             color: #ffffff;
-            box-shadow: 0 0 12px rgba(255, 51, 51, 0.3);
+            box-shadow: 0 0 12px rgba(255, 192, 203, 0.3);
         }
     </style>
 </head>
@@ -199,7 +196,6 @@
     </div>
 
     <div class="links-container">
-        <!-- Standalone Root APK -->
         <div class="mod-card">
             <div class="card-top">
                 <div class="card-info">
@@ -207,12 +203,23 @@
                     <span class="btn-description">Standalone Root Latest APK</span>
                 </div>
                 <a href="https://github.com/Lumince/singularity/releases" download class="download-btn" title="Download Singularity APK">
-                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 4v11"></path></svg>
                 </a>
             </div>
         </div>
 
-        <!-- Big Scary Menu -->
+        <div class="mod-card">
+            <div class="card-top">
+                <div class="card-info">
+                    <span class="btn-name">Anti Root Bypass</span>
+                    <span class="btn-description">No PC Anti Root Bypass For Every Game But Tomahawk Games</span>
+                </div>
+                <a href="https://github.com/stripesvr/StripesHub/releases/download/StripesBypass/StripesBypass.apk" download class="download-btn" title="Download Bypass">
+                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 4v11"></path></svg>
+                </a>
+            </div>
+        </div>
+
         <div class="mod-card">
             <div class="card-top">
                 <div class="card-info">
@@ -220,7 +227,7 @@
                     <span class="btn-description">mod menu</span>
                 </div>
                 <a href="BigScary-JaSC-Android.zip" download class="download-btn" title="Download Zip File">
-                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 4v11"></path></svg>
                 </a>
             </div>
             <div class="code-row">
@@ -230,77 +237,12 @@
                 </button>
             </div>
         </div>
-
-        <!-- BwahVR Menu -->
-        <div class="mod-card">
-            <div class="card-top">
-                <div class="card-info">
-                    <span class="btn-name">BwahVR Menu</span>
-                    <span class="btn-description">Menu For Bwah, Run While In Garden</span>
-                </div>
-                <a href="StripedClientBwah.zip" download class="download-btn" title="Download Zip File">
-                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                </a>
-            </div>
-            <div class="code-row">
-                <span class="code-text">su -c "sh '/storage/emulated/0/Download/Bwah-Android/run-android.sh'"</span>
-                <button class="copy-btn" onclick="copyCommand(this)" title="Copy Command">
-                    <img src="176.png" alt="Copy Icon" class="copy-icon">
-                </button>
-            </div>
-        </div>
-
-        <!-- Animal Rivals Mod Menu -->
-        <div class="mod-card">
-            <div class="card-top">
-                <div class="card-info">
-                    <span class="btn-name">Animal Rivals Mod Menu (PATCHED)</span>
-                    <span class="btn-description">this menu will get you banned as of right now</span>
-                </div>
-                <a href="PATCHED.zip" download class="download-btn" title="Download Zip File">
-                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                </a>
-            </div>
-            <div class="code-row">
-                <span class="code-text">su -c "sh '/storage/emulated/0/Download/AnimalRivals-Android/run-android.sh'"</span>
-                <button class="copy-btn" onclick="copyCommand(this)" title="Copy Command">
-                    <img src="176.png" alt="Copy Icon" class="copy-icon">
-                </button>
-            </div>
-        </div>
-
-        <!-- Real VR Fishing Mod Menu -->
-        <div class="mod-card">
-            <div class="card-top">
-                <div class="card-info">
-                    <span class="btn-name">Real VR Fishing Mod Menu</span>
-                    <span class="btn-description">Menu For Real Vr Fishing, Ported To Singularity By Me</span>
-                </div>
-                <a href="Fishing-Android.zip" download class="download-btn" title="Download Zip File">
-                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                </a>
-            </div>
-            <div class="code-row">
-                <span class="code-text">su -c "sh '/storage/emulated/0/Download/Fishing-Android/run-android.sh'"</span>
-                <button class="copy-btn" onclick="copyCommand(this)" title="Copy Command">
-                    <img src="176.png" alt="Copy Icon" class="copy-icon">
-                </button>
-            </div>
-        </div>
-
-        <!-- 
-            TO ADD A NEW MENU:
-            Just copy one of the .mod-card blocks above and paste it here (still inside .links-container).
-            Update the name, description, download href, and the command text.
-            No other changes needed — the CSS flex layout will handle spacing automatically.
-        -->
     </div>
 
     <a href="https://stripesvr.github.io/StripesHub" class="home-btn">Home</a>
 
     <script>
-        // --- TYPEWRITER CONFIGURATION ---
-        const textArray = ["Singularity Root (NO PC)"]; 
+        const textArray = ["Anti Root Bypass"]; 
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -310,7 +252,6 @@
         const typewriterElement = document.getElementById("typewriter");
         function type() {
             const currentText = textArray[textIndex];
-            
             if (isDeleting) {
                 typewriterElement.textContent = currentText.substring(0, charIndex - 1);
                 charIndex--;
@@ -329,11 +270,9 @@
             }
             setTimeout(type, nextActionSpeed);
         }
-        // --- CLIPBOARD ACTION ENGINE ---
         function copyCommand(buttonElement) {
             const codeRow = buttonElement.closest('.code-row');
             const commandText = codeRow.querySelector('.code-text').innerText;
-            
             navigator.clipboard.writeText(commandText).then(() => {
                 codeRow.style.borderColor = '#00ff66';
                 setTimeout(() => {
