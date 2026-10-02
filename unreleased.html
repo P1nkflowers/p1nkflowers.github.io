@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>?????</title>
     <style>
-        /* --- GLOBAL STYLES --- */
         body {
             background-color: #0d0d11;
             color: #ffffff;
@@ -22,7 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* --- CAUTION TAPE OVERLAYS --- */
         .caution-tape {
             position: absolute;
             width: 160vw;
@@ -52,13 +50,11 @@
             padding: 0 10px;
         }
 
-        /* Multiple Angled Tapes */
         .tape-1 { transform: rotate(-15deg) translateY(100px); }
         .tape-2 { transform: rotate(10deg) translateY(320px); }
         .tape-3 { transform: rotate(-8deg) translateY(480px); }
         .tape-4 { transform: rotate(22deg) translateY(200px); }
 
-        /* --- GLOWING TYPEWRITER EFFECT --- */
         .title-container {
             height: 60px;
             display: flex;
@@ -72,23 +68,22 @@
             font-size: 2.5rem;
             font-weight: bold;
             color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 51, 51, 0.8), 
-                         0 0 20px rgba(255, 51, 51, 0.6);
+            text-shadow: 0 0 10px rgba(255, 192, 203, 0.8), 
+                         0 0 20px rgba(255, 192, 203, 0.6);
             letter-spacing: 2px;
-            border-right: 3px solid #ff3333;
+            border-right: 3px solid #ffc0cb;
             white-space: nowrap;
             background: transparent;
             padding-right: 4px;
             animation: blink 0.75s step-end infinite;
-            font-family: monospace; /* Gives a technical glitch/mystery vibe */
+            font-family: monospace;
         }
 
         @keyframes blink {
             from, to { border-color: transparent }
-            50% { border-color: #ff3333; }
+            50% { border-color: #ffc0cb; }
         }
 
-        /* --- BUTTONS CONTAINER --- */
         .links-container {
             width: 100%;
             max-width: 500px;
@@ -99,7 +94,6 @@
             z-index: 1;
         }
 
-        /* --- EDITABLE BUTTON STYLES --- */
         .card-link {
             background: linear-gradient(135deg, #16161f 0%, #1f1f2e 100%);
             border: 1px solid #33334d;
@@ -115,14 +109,14 @@
 
         .card-link:hover {
             transform: translateY(-3px);
-            border-color: #ff3333;
-            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.2);
+            border-color: #ffc0cb;
+            box-shadow: 0 6px 20px rgba(255, 192, 203, 0.2);
         }
 
         .btn-name {
             font-size: 1.25rem;
             font-weight: bold;
-            color: #ff4d4d;
+            color: #ffb6c1;
             margin-bottom: 5px;
         }
 
@@ -132,7 +126,6 @@
             line-height: 1.4;
         }
 
-        /* --- SMALL HOME BUTTON STYLE --- */
         .home-btn {
             background: #16161f;
             border: 1px solid #33334d;
@@ -151,9 +144,9 @@
         }
 
         .home-btn:hover {
-            border-color: #ff3333;
+            border-color: #ffc0cb;
             color: #ffffff;
-            box-shadow: 0 0 12px rgba(255, 51, 51, 0.3);
+            box-shadow: 0 0 12px rgba(255, 192, 203, 0.3);
         }
     </style>
 </head>
@@ -193,10 +186,8 @@
     <a href="https://stripesvr.github.io/StripesHub" class="home-btn">Home</a>
 
     <script>
-        // Set of strange, shifting characters
         const weirdChars = '¥§¶#$@%&*!?ØΞΨΩΔ░▒▓█<>/\\|?=+-';
         const targetWords = ["█▒░?????░▒█", "§Ψ#UNRELEASED#Ψ§", "Ø?Ø?Ø?Ø?Ø?Ø"];
-        
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -208,12 +199,10 @@
 
         function type() {
             const currentWord = targetWords[wordIndex];
-            
             if (isDeleting) {
                 typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
                 charIndex--;
             } else {
-                // Adds a random flickering glitch character at the typing head
                 const typedPart = currentWord.substring(0, charIndex);
                 const glitchTail = charIndex < currentWord.length ? getRandomChar() : '';
                 typewriterElement.textContent = typedPart + glitchTail;
@@ -223,7 +212,7 @@
             let nextSpeed = isDeleting ? 70 : 120;
 
             if (!isDeleting && charIndex > currentWord.length) {
-                nextSpeed = 2000; // Pause at full word
+                nextSpeed = 2000;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;

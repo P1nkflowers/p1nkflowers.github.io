@@ -15,7 +15,7 @@
             justify-content: flex-start;
             min-height: 100vh;
             margin: 0;
-            padding: 60px 20px 80px 20px; /* Added extra bottom padding for the home button */
+            padding: 60px 20px 80px 20px;
             box-sizing: border-box;
             position: relative;
         }
@@ -33,10 +33,10 @@
             font-size: 2.5rem;
             font-weight: bold;
             color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 51, 51, 0.8), 
-                         0 0 20px rgba(255, 51, 51, 0.6);
+            text-shadow: 0 0 10px rgba(255, 192, 203, 0.8), 
+                         0 0 20px rgba(255, 192, 203, 0.6);
             letter-spacing: 2px;
-            border-right: 3px solid #ff3333;
+            border-right: 3px solid #ffc0cb;
             white-space: nowrap;
             background: transparent;
             padding-right: 4px;
@@ -45,7 +45,7 @@
 
         @keyframes blink {
             from, to { border-color: transparent }
-            50% { border-color: #ff3333; }
+            50% { border-color: #ffc0cb; }
         }
 
         /* --- BUTTONS CONTAINER --- */
@@ -55,7 +55,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            margin-bottom: 40px; /* Space between links and home button */
+            margin-bottom: 40px;
         }
 
         /* --- EDITABLE BUTTON STYLES --- */
@@ -78,14 +78,14 @@
 
         .card-link:hover {
             transform: translateY(-3px);
-            border-color: #ff3333;
-            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.2);
+            border-color: #ffc0cb;
+            box-shadow: 0 6px 20px rgba(255, 192, 203, 0.2);
         }
 
         .btn-name {
             font-size: 1.25rem;
             font-weight: bold;
-            color: #ff4d4d;
+            color: #ffb6c1;
             margin-bottom: 5px;
         }
 
@@ -105,15 +105,15 @@
         }
 
         .code-card:hover {
-            border-color: #ff3333;
-            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.2);
+            border-color: #ffc0cb;
+            box-shadow: 0 6px 20px rgba(255, 192, 203, 0.2);
         }
 
         .code-text {
             font-family: 'Consolas', 'Courier New', Courier, monospace;
             font-size: 1.1rem;
             font-weight: bold;
-            color: #ff4d4d;
+            color: #ffb6c1;
             word-break: break-all;
         }
 
@@ -134,8 +134,8 @@
         }
 
         .copy-btn:hover {
-            background: #ff3333;
-            border-color: #ff4d4d;
+            background: #ffc0cb;
+            border-color: #ffb6c1;
         }
 
         .copy-icon {
@@ -164,13 +164,13 @@
             text-transform: uppercase;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            margin-top: auto; /* Pushes to bottom if content is short */
+            margin-top: auto;
         }
 
         .home-btn:hover {
-            border-color: #ff3333;
+            border-color: #ffc0cb;
             color: #ffffff;
-            box-shadow: 0 0 12px rgba(255, 51, 51, 0.3);
+            box-shadow: 0 0 12px rgba(255, 192, 203, 0.3);
         }
     </style>
 </head>
@@ -199,9 +199,7 @@
     <a href="https://stripesvr.github.io/StripesHub" class="home-btn">Home</a>
 
     <script>
-        // --- TYPEWRITER CONFIGURATION ---
         const textArray = ["Frida Tools"]; 
-        
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -212,7 +210,6 @@
 
         function type() {
             const currentText = textArray[textIndex];
-            
             if (isDeleting) {
                 typewriterElement.textContent = currentText.substring(0, charIndex - 1);
                 charIndex--;
@@ -235,7 +232,6 @@
             setTimeout(type, nextActionSpeed);
         }
 
-        // --- CLIPBOARD ACTION ENGINE ---
         function copyCommand() {
             const commandText = document.getElementById("command-text").innerText;
             navigator.clipboard.writeText(commandText).catch(err => {

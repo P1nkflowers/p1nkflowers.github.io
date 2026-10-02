@@ -12,7 +12,7 @@
 
         body {
             background-color: var(--beat-color-pulse);
-            background-image: radial-gradient(circle at center, rgba(255, 30, 30, 0.15) 0%, transparent 80%);
+            background-image: radial-gradient(circle at center, rgba(255, 192, 203, 0.15) 0%, transparent 80%);
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
@@ -85,8 +85,8 @@
             color: #ffffff;
             letter-spacing: 3px;
             text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(255, 51, 51, 0.9), 
-                         0 0 30px rgba(255, 51, 51, 0.5);
+            text-shadow: 0 0 15px rgba(255, 192, 203, 0.9), 
+                         0 0 30px rgba(255, 192, 203, 0.5);
             animation: pulseText 2s infinite ease-in-out;
         }
 
@@ -99,8 +99,8 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
-            border: 5px solid #ff1111;
-            box-shadow: 0 0 calc(20px + var(--beat-glow)) rgba(255, 10, 10, 0.6);
+            border: 5px solid #ffc0cb;
+            box-shadow: 0 0 calc(20px + var(--beat-glow)) rgba(255, 192, 203, 0.6);
             margin-bottom: 20px;
             border-radius: 50%;
         }
@@ -117,10 +117,10 @@
             font-size: 2.5rem;
             font-weight: bold;
             color: #ffffff;
-            text-shadow: 0 0 calc(15px + var(--beat-glow)) rgba(255, 10, 10, 0.8), 
-                         0 0 calc(30px + var(--beat-glow)) rgba(255, 0, 0, 0.5);
+            text-shadow: 0 0 calc(15px + var(--beat-glow)) rgba(255, 192, 203, 0.8), 
+                         0 0 calc(30px + var(--beat-glow)) rgba(255, 192, 203, 0.5);
             letter-spacing: 2px;
-            border-right: 3px solid #ff1111;
+            border-right: 3px solid #ffc0cb;
             white-space: nowrap;
             background: transparent;
             padding-right: 4px;
@@ -129,7 +129,7 @@
 
         @keyframes blink {
             from, to { border-color: transparent }
-            50% { border-color: #ff1111; }
+            50% { border-color: #ffc0cb; }
         }
 
         .links-container {
@@ -156,14 +156,14 @@
 
         .card-link:hover {
             transform: translateY(-3px);
-            border-color: #ff1111;
-            box-shadow: 0 6px 25px rgba(255, 10, 10, 0.5);
+            border-color: #ffc0cb;
+            box-shadow: 0 6px 25px rgba(255, 192, 203, 0.5);
         }
 
         .btn-name {
             font-size: 1.25rem;
             font-weight: bold;
-            color: #ff3333;
+            color: #ffb6c1;
             margin-bottom: 5px;
         }
 
@@ -173,14 +173,13 @@
             line-height: 1.4;
         }
 
-        /* Subscription Required Block Module */
         .sub-locker {
             background: linear-gradient(135deg, #121218 0%, #171724 100%);
-            border: 2px solid #ff1111;
+            border: 2px solid #ffc0cb;
             border-radius: 16px;
             padding: 30px;
             text-align: center;
-            box-shadow: 0 0 35px rgba(255, 17, 17, 0.35);
+            box-shadow: 0 0 35px rgba(255, 192, 203, 0.35);
             max-width: 440px;
             width: 100%;
             box-sizing: border-box;
@@ -193,153 +192,26 @@
             margin-top: 0;
             font-size: 1.6rem;
             letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(255, 17, 17, 0.6);
+            text-shadow: 0 0 10px rgba(255, 192, 203, 0.6);
         }
 
         .sub-locker p {
             color: #b0b0bc;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
-
-        .locker-btn {
-            background: #ff1111;
-            color: #ffffff;
-            border: none;
-            padding: 14px 20px;
-            font-weight: bold;
-            font-size: 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            transition: all 0.2s ease;
-            margin-bottom: 15px;
-            width: 100%;
-            box-sizing: border-box;
-            box-shadow: 0 4px 15px rgba(255, 17, 17, 0.2);
-        }
-
-        .locker-btn:hover {
-            background: #e60000;
-            transform: translateY(-1px);
-        }
-
-        .locker-btn.verify-btn {
-            background: #20202c;
-            border: 1px solid #3d3d5c;
-            color: #e0e0eb;
-            box-shadow: none;
-        }
-
-        .locker-btn.verify-btn:hover {
-            background: #272736;
-            border-color: #ff1111;
-        }
-
-        .error-msg {
-            color: #ff3333;
-            font-size: 0.85rem;
-            margin-top: -5px;
-            margin-bottom: 15px;
-            display: none;
-            font-weight: 500;
+            line-height: 1.6;
+            margin: 10px 0 0;
         }
     </style>
 </head>
 <body>
-
-    <canvas id="lightning-canvas"></canvas>
-    <audio id="bg-audio" crossorigin="anonymous"></audio>
-
-    <!-- Wrapped enter overlay in a link opening in a new tab -->
-    <a href="https://gtag.pro/stripes" target="_blank" class="enter-link">
-        <div class="enter-overlay" id="overlay-screen">
-            <div class="enter-text" id="enter-status">Click to Enter...</div>
-        </div>
-    </a>
-
-    <div class="main-content" id="site-content">
-        <img src="151.png" alt="StripesVR Profile Picture" class="profile-pic">
-
-        <div class="title-container">
-            <div class="typewriter-text" id="typewriter"></div>
-        </div>
-
-        <div class="sub-locker" id="subscription-modal">
-            <h3>ATTENTION</h3>
-            <p>Please Subscribe to my channel before continuing to my site.</p>
-            <a href="https://youtube.com/@virtualstripes?sub_confirmation=1" target="_blank" class="locker-btn" id="subscribe-action-btn">1. Subscribe on YouTube</a>
-            <div class="error-msg" id="locker-error">Please complete step 1 before checking status!</div>
-            <button class="locker-btn verify-btn" id="verify-action-btn">2. Check Verification</button>
-        </div>
-
-        <div class="links-container" id="menu-links">
-            <a href="frida.html" class="card-link">
-                <span class="btn-name">Frida Tools</span>
-                <span class="btn-description">Needed For Every Mod In Here!</span>
-            </a>
-
-            <a href="https://discord.gg/XnFxrkuKM5" class="card-link">
-                <span class="btn-name">EIC Modding</span>
-                <span class="btn-description">standalone no PC animal company mod</span>
-            </a>
-
-            <a href="stripesadb.html" class="card-link">
-                <span class="btn-name">StripesADB</span>
-                <span class="btn-description">All The Downloads Needed For StripesADB</span>
-            </a>
-
-            <a href="standy.html" class="card-link">
-                <span class="btn-name">Standy Mod</span>
-                <span class="btn-description">Download N Stuff For Standy Mod Works For Every Game!</span>
-            </a>
-
-            <a href="iistupid.html" class="card-link">
-                <span class="btn-name">II Stupid Menu Standalone</span>
-                <span class="btn-description">Coming Soon</span>
-            </a>
-
-            <a href="https://discord.gg/spm" class="card-link">
-                <span class="btn-name">SPM Gorilla Tag Mods</span>
-                <span class="btn-description">Mod Menu No PC</span>
-            </a>
-
-            <a href="https://github.com/stripesvr/StripesHub/releases/tag/mods" class="card-link">
-                <span class="btn-name">Fangame Modder</span>
-                <span class="btn-description">ye, mods fangames</span>
-            </a>
-
-            <a href="delta.html" class="card-link">
-                <span class="btn-name">Delta</span>
-                <span class="btn-description">delta new adb</span>
-            </a>
-
-            <a href="moonlitv2.html" class="card-link">
-                <span class="btn-name">MoonlitV2</span>
-                <span class="btn-description">The BEST Moonlit</span>
-            </a>
-        </div>
-    </div>
-
     <script>
-        // ==========================================
-        // CONFIGURATION OPTIONS
-        // ==========================================
-        // Change song volume here (0.0 = Mute, 0.5 = 50% volume, 1.0 = 100% full volume)
-        const DEFAULT_VOLUME = 0.05; 
-        // ==========================================
-
-        const textArray = ["stripes.lol"];
+        const textArray = ["P1nk flowers"];
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const typeSpeed = 150;  
-        const eraseSpeed = 100; 
-        const delayBetween = 2500; 
+        const typeSpeed = 150;
+        const eraseSpeed = 100;
+        const delayBetween = 2500;
         const typewriterElement = document.getElementById("typewriter");
-
         function type() {
             const currentText = textArray[textIndex];
             if (isDeleting) {
@@ -351,221 +223,16 @@
             }
 
             let nextActionSpeed = isDeleting ? eraseSpeed : typeSpeed;
-
             if (!isDeleting && charIndex === currentText.length) {
-                nextActionSpeed = delayBetween; 
+                nextActionSpeed = delayBetween;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
-                nextActionSpeed = 500; 
+                textIndex = (textIndex + 1) % textArray.length;
+                nextActionSpeed = 500;
             }
             setTimeout(type, nextActionSpeed);
         }
-
-        const canvas = document.getElementById('lightning-canvas');
-        const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        let lightningOpacity = 0;
-        let activeStrikes = [];
-
-        function createLightningPath(startX, startY, endY, segments) {
-            let path = [{x: startX, y: startY}];
-            let currentX = startX;
-            let currentY = startY;
-            let segmentHeight = (endY - startY) / segments;
-
-            for (let i = 0; i < segments; i++) {
-                currentY += segmentHeight;
-                let deviation = (Math.random() - 0.5) * 110; 
-                currentX += deviation;
-                path.push({x: currentX, y: currentY});
-            }
-            return path;
-        }
-
-        function drawLightning(path, width, glowSize, color) {
-            ctx.strokeStyle = color;
-            ctx.lineWidth = width;
-            ctx.shadowBlur = glowSize;
-            ctx.shadowColor = '#ff0000';
-            ctx.lineCap = 'round';
-            ctx.lineJoin = 'round';
-
-            ctx.beginPath();
-            ctx.moveTo(path[0].x, path[0].y);
-            for (let i = 1; i < path.length; i++) {
-                ctx.lineTo(path[i].x, path[i].y);
-            }
-            ctx.stroke();
-        }
-
-        function triggerLightningStrike() {
-            activeStrikes = [];
-            let totalStrikes = Math.floor(Math.random() * 3) + 2; 
-
-            for (let i = 0; i < totalStrikes; i++) {
-                let startX = Math.random() * canvas.width;
-                let path = createLightningPath(startX, 0, canvas.height, 10);
-                activeStrikes.push(path);
-            }
-            lightningOpacity = 1.0; 
-        }
-
-        let audioCtx, analyser, dataArray, sourceNode;
-        let isPlaying = false;
-        const audio = document.getElementById('bg-audio');
-        
-        const songUrl = 'song.mp3';
-
-        let bassHistory = [];
-        const historySize = 20; 
-        let lastStrikeTime = 0;
-
-        function setupAndPlayAudio() {
-            try {
-                audio.src = songUrl;
-                audio.loop = true;
-                audio.crossOrigin = "anonymous";
-                audio.volume = DEFAULT_VOLUME;
-
-                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-                audioCtx = new AudioContextClass();
-                analyser = audioCtx.createAnalyser();
-                analyser.fftSize = 64; 
-                
-                const bufferLength = analyser.frequencyBinCount;
-                dataArray = new Uint8Array(bufferLength);
-
-                sourceNode = audioCtx.createMediaElementSource(audio);
-                sourceNode.connect(analyser);
-                analyser.connect(audioCtx.destination);
-
-                if (audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
-
-                audio.currentTime = 7;
-
-                let playPromise = audio.play();
-                if (playPromise !== undefined) {
-                    playPromise.then(() => {
-                        isPlaying = true;
-                        animateDance();
-                    }).catch(err => {
-                        console.error("Playback failed directly:", err);
-                        audio.src = 'song.mp3';
-                        audio.volume = DEFAULT_VOLUME;
-                        audio.play().then(() => { isPlaying = true; animateDance(); });
-                    });
-                }
-
-            } catch (err) {
-                console.error("Audio initialization glitch:", err);
-            }
-        }
-
-        function animateDance() {
-            requestAnimationFrame(animateDance);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            if (!isPlaying) return;
-
-            analyser.getByteFrequencyData(dataArray);
-            let bassValue = (dataArray[0] + dataArray[1] + dataArray[2] + dataArray[3]) / 4;
-
-            let sum = 0;
-            for (let i = 0; i < bassHistory.length; i++) {
-                sum += bassHistory[i];
-            }
-            let bassAverage = bassHistory.length > 0 ? sum / bassHistory.length : 120;
-
-            bassHistory.push(bassValue);
-            if (bassHistory.length > historySize) {
-                bassHistory.shift();
-            }
-
-            let currentTime = Date.now();
-            let timeSinceLastStrike = currentTime - lastStrikeTime;
-
-            if ((bassValue > bassAverage * 1.04 && timeSinceLastStrike > 180) || (bassValue >= 240 && timeSinceLastStrike > 320)) {
-                triggerLightningStrike();
-                lastStrikeTime = currentTime;
-            }
-
-            if (lightningOpacity > 0) {
-                ctx.globalAlpha = lightningOpacity;
-                activeStrikes.forEach(path => {
-                    drawLightning(path, 5, 35, '#ff3333');
-                    drawLightning(path, 1.5, 5, '#ffffff');
-                });
-                lightningOpacity *= 0.75; 
-                if (lightningOpacity < 0.01) lightningOpacity = 0;
-            }
-
-            let normalized = bassValue / 255;
-            let glowIntensity = normalized * 50; 
-            let redShift = Math.floor(13 + (lightningOpacity * 35)); 
-            let colorPulse = `rgb(${redShift}, 13, 17)`;
-
-            document.documentElement.style.setProperty('--beat-glow', `${glowIntensity}px`);
-            document.documentElement.style.setProperty('--beat-color-pulse', colorPulse);
-        }
-
-        let clickedSubscribe = false;
-
-        function checkLayoutLock() {
-            const container = document.getElementById('menu-links');
-            const modal = document.getElementById('subscription-modal');
-            const subBtn = document.getElementById('subscribe-action-btn');
-            const verifyBtn = document.getElementById('verify-action-btn');
-            const errorMsg = document.getElementById('locker-error');
-
-            const hasVisitedBefore = localStorage.getItem('stripes_visited');
-
-            if (!hasVisitedBefore) {
-                container.style.display = 'none';
-                modal.style.display = 'block';
-
-                subBtn.addEventListener('click', () => {
-                    clickedSubscribe = true;
-                    errorMsg.style.display = 'none';
-                });
-
-                verifyBtn.addEventListener('click', () => {
-                    if (!clickedSubscribe) {
-                        errorMsg.style.display = 'block';
-                    } else {
-                        localStorage.setItem('stripes_visited', 'true');
-                        modal.style.display = 'none';
-                        container.style.display = 'flex';
-                    }
-                });
-            } else {
-                modal.style.display = 'none';
-                container.style.display = 'flex';
-            }
-        }
-
-        const overlay = document.getElementById('overlay-screen');
-        const siteContent = document.getElementById('site-content');
-        const enterStatus = document.getElementById('enter-status');
-
-        overlay.addEventListener('click', () => {
-            enterStatus.textContent = "Loading Track...";
-            overlay.classList.add('hidden');
-            siteContent.classList.add('active');
-
-            setupAndPlayAudio();
-            checkLayoutLock();
-        });
-
         document.addEventListener("DOMContentLoaded", function() {
             setTimeout(type, 500);
         });
